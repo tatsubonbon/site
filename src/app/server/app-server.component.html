@@ -1,0 +1,6 @@
+<h3>component</h3>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">App Server</button>
+<p *ngIf="serverCreated">Server with Id {{ serverId }} is {{ serverStatus }}</p>
+<p>{{ getServerStatus() }}</p>
+<p>{{ serverCreationStatus }}</p>
+<input type="text" class="form-control" [(ngModel)]="serverName">
