@@ -13,10 +13,17 @@ export class RecipeService {
 
     }
 
-    private recipes: Recipe[] = [
-        new Recipe('Test Recipe', 'this is a test', 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg', [new Ingredient('Meet', 1), new Ingredient('French', 20)]),
-        new Recipe('Another Test Recipe', 'this is a test', 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg', [])
-    ];
+    // private recipes: Recipe[] = [
+    //     new Recipe('Test Recipe', 'this is a test', 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg', [new Ingredient('Meet', 1), new Ingredient('French', 20)]),
+    //     new Recipe('Another Test Recipe', 'this is a test', 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg', [])
+    // ];
+
+    private recipes: Recipe[] = []
+
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes);
+    }
 
     getRecipes() {
         return this.recipes.slice();

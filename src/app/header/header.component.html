@@ -8,20 +8,29 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLinkActive="active"
+                    <a *ngIf="isAuthentificated" class="nav-link active" aria-current="page" routerLinkActive="active"
                         routerLink="/recipes">Recipes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLinkActive="active" routerLink="/shopping-list">Shopping List</a>
                 </li>
-                <li class="nav-item dropdown" appDropdown>
+                <li class="nav-item" *ngIf="!isAuthentificated">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/auth">Auth</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li *ngIf="isAuthentificated" class="nav-item">
+                    <a class="nav-link" style="cursor: pointer;" (click)="Onlogout()">Logout</a>
+                </li>
+                <li *ngIf="isAuthentificated" class="nav-item dropdown" appDropdown>
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Dropdown
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" style="cursor: pointer;">Save Data</a></li>
-                        <li><a class="dropdown-item" style="cursor: pointer;">Fetch Data</a></li>
+                        <li><a class="dropdown-item" style="cursor: pointer;" (click)="onSave()">Save Data</a></li>
+                        <li><a class="dropdown-item" style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
