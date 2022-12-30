@@ -27,35 +27,34 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AppServerComponent,
-    WarningAlertComponent,
-    SuccessAlertComponent,
-    HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    DropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
-    AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
-    PlaceHolderDirective
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
-  providers: [ShoppingListService, RecipeService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
-  bootstrap: [AppComponent],
-  entryComponents: [AlertComponent]
+    declarations: [
+        AppComponent,
+        AppServerComponent,
+        WarningAlertComponent,
+        SuccessAlertComponent,
+        HeaderComponent,
+        RecipesComponent,
+        RecipeListComponent,
+        RecipeDetailComponent,
+        RecipeItemComponent,
+        ShoppingListComponent,
+        ShoppingEditComponent,
+        DropdownDirective,
+        RecipeStartComponent,
+        RecipeEditComponent,
+        AuthComponent,
+        LoadingSpinnerComponent,
+        AlertComponent,
+        PlaceHolderDirective
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule
+    ],
+    providers: [ShoppingListService, RecipeService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
